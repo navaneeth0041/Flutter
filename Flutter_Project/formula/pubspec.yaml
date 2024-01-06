@@ -53,7 +53,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/img/360_F_466738163_nEW7NHxpC5V8HrUIxbCcQMtelDi74A0X.jpg
+    - assets/img/
 
 
   # The following line ensures that the Material Icons font is

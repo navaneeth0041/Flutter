@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:formula/chemistry.dart';
 import 'package:formula/maths.dart';
 
 void main() => runApp(MaterialApp(
@@ -61,7 +64,7 @@ class _home_pageState extends State<home_page> {
                       ),
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 2,
                     ),
                     Image.asset(
                       'assets/img/360_F_466738163_nEW7NHxpC5V8HrUIxbCcQMtelDi74A0X.jpg',
@@ -186,58 +189,67 @@ class _home_pageState extends State<home_page> {
                           SizedBox(
                             width: 20,
                           ),
-                          Container(
-                            height: 170,
-                            width: 160,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20.0)),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Column(
-                                // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(10.0)),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ChemistryPage()),
+                              );
+                            },
+                            child: Container(
+                              height: 170,
+                              width: 160,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      height: 60,
+                                      width: 60,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10.0)),
+                                      ),
+                                      child: Icon(
+                                        Icons.science,
+                                        color: Colors.white,
+                                        size: 40,
+                                      ),
                                     ),
-                                    child: Icon(
-                                      Icons.science,
-                                      color: Colors.white,
-                                      size: 40,
+                                    SizedBox(
+                                      height: 10,
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'Chemistry',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      letterSpacing: 0.4,
+                                    Text(
+                                      'Chemistry',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                        letterSpacing: 0.4,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    '"Think like a proton, always positive.."',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 12,
-                                      fontStyle: FontStyle.italic,
+                                    SizedBox(
+                                      height: 5,
                                     ),
-                                  ),
-                                ],
+                                    Text(
+                                      '"Think like a proton, always positive.."',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12,
+                                        fontStyle: FontStyle.italic,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

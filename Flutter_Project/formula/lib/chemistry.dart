@@ -1,18 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, library_private_types_in_public_api, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:formula/maths_chapters/differentiationpage.dart';
-import 'package:formula/maths_chapters/integrationpage.dart';
-import 'package:formula/maths_chapters/trigonometry.dart';
-import 'package:formula/maths_chapters/3d.dart';
-import 'package:formula/maths_chapters/vectors.dart';
+import 'package:formula/chemistry_chapters/solid.dart';
 
-class MathsPage extends StatefulWidget {
+
+class ChemistryPage extends StatefulWidget {
   @override
-  _MathsPageState createState() => _MathsPageState();
+  _ChemistryPageState createState() => _ChemistryPageState();
 }
 
-class _MathsPageState extends State<MathsPage> {
+class _ChemistryPageState extends State<ChemistryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +79,7 @@ class _MathsPageState extends State<MathsPage> {
                                       borderRadius: BorderRadius.circular(25),
                                     ),
                                     child: Icon(
-                                      Icons.calculate,
+                                      Icons.science,
                                       size: 70,
                                       color: Colors.white,
                                     ),
@@ -97,7 +94,7 @@ class _MathsPageState extends State<MathsPage> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Mathematics',
+                                          'Chemistry',
                                           style: TextStyle(
                                             fontSize: 20,
                                             color: Colors.black,
@@ -121,7 +118,7 @@ class _MathsPageState extends State<MathsPage> {
                                                   width: 5,
                                                 ),
                                                 Text(
-                                                  '7k+',
+                                                  '15k+',
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontWeight: FontWeight.bold,
@@ -143,7 +140,7 @@ class _MathsPageState extends State<MathsPage> {
                                                   width: 5,
                                                 ),
                                                 Text(
-                                                  '3.2',
+                                                  '4.7',
                                                   style: TextStyle(
                                                     color: Colors.black,
                                                     fontWeight: FontWeight.bold,
@@ -162,7 +159,7 @@ class _MathsPageState extends State<MathsPage> {
                                   Padding(
                                     padding: const EdgeInsets.all(15.0),
                                     child: Text(
-                                      '\$10',
+                                      '\$7',
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 25,
@@ -197,65 +194,65 @@ class _MathsPageState extends State<MathsPage> {
                             ),
                             chapters(
                               num: '01',
-                              title: 'Integration',
+                              title: 'Solid State',
                               cards: '5 cards available',
                               onTap: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            IntegrationPage()));
+                                            SolidPage()));
                               },
                             ),
-                            chapters(
-                              num: '02',
-                              title: 'Differentiation',
-                              cards: '4 cards available',
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            DifferentiationPage()));
-                              },
+                            // chapters(
+                            //   num: '02',
+                            //   title: 'Differentiation',
+                            //   cards: '4 cards available',
+                            //   onTap: () {
+                            //     Navigator.push(
+                            //         context,
+                            //         MaterialPageRoute(
+                            //             builder: (context) =>
+                            //                 DifferentiationPage()));
+                            //   },
 
-                            ),
-                            chapters(
-                              num: '03',
-                              title: 'Trigonometry',
-                              cards: '7 cards available',
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            TrigonometryPage()));
-                              },
-                            ),
-                            chapters(
-                              num: '04',
-                              title: '3D',
-                              cards: '4 cards available',
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            ThreeDPage()));
-                              },
-                            ),
-                            chapters(
-                              num: '05',
-                              title: 'Vectors',
-                              cards: '7 cards available',
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            VectorsPage()));
-                              },
-                            ),
+                            // ),
+                            // chapters(
+                            //   num: '03',
+                            //   title: 'Trigonometry',
+                            //   cards: '7 cards available',
+                            //   onTap: () {
+                            //     Navigator.push(
+                            //         context,
+                            //         MaterialPageRoute(
+                            //             builder: (context) =>
+                            //                 TrigonometryPage()));
+                            //   },
+                            // ),
+                            // chapters(
+                            //   num: '04',
+                            //   title: '3D',
+                            //   cards: '4 cards available',
+                            //   onTap: () {
+                            //     Navigator.push(
+                            //         context,
+                            //         MaterialPageRoute(
+                            //             builder: (context) =>
+                            //                 ThreeDPage()));
+                            //   },
+                            // ),
+                            // chapters(
+                            //   num: '05',
+                            //   title: 'Vectors',
+                            //   cards: '7 cards available',
+                            //   onTap: () {
+                            //     Navigator.push(
+                            //         context,
+                            //         MaterialPageRoute(
+                            //             builder: (context) =>
+                            //                 VectorsPage()));
+                            //   },
+                            // ),
                           ],
                         ),
                       ),
