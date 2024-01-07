@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, unnecessary_const
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, unnecessary_const, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -45,8 +45,10 @@ class _IntegrationPageState extends State<IntegrationPage> with TickerProviderSt
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
+            
             Padding(
               padding: EdgeInsets.all(40.0),
+            
               child: Center(
                 child: Text(
                   "Formula Cards",
@@ -106,6 +108,27 @@ class _IntegrationPageState extends State<IntegrationPage> with TickerProviderSt
                       initialIndex: currentindex
                       ),
                       selectedColor: Colors.grey,
+                    ),
+                    SizedBox(
+                      height:160,
+                      
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 320,
+                        ),
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: Icon(Icons.add),
+                        ),
+                        
+                      ],
                     ),
                   ],
                 ),

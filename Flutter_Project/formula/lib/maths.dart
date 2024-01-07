@@ -39,7 +39,7 @@ class _MathsPageState extends State<MathsPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(Icons.sort, size: 37, color: Colors.white),
+                            Icon(Icons.menu, size: 35, color: Colors.white),
                             Container(
                               height: 35,
                               width: 35,
