@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:formula/chemistry.dart';
+import 'package:formula/intro.dart';
 import 'package:formula/maths.dart';
+import 'package:formula/physics.dart';
 
 class home_page extends StatefulWidget {
   @override
@@ -42,54 +44,95 @@ class _home_pageState extends State<home_page> {
       drawer: Drawer(
         backgroundColor: Colors.black,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            DrawerHeader(
-              
-              child: Image.asset(
-                'assets/img/elearning.png',
-                fit: BoxFit.cover,
-              ),
+            Column(
+              children: [
+                DrawerHeader(
+                  child: Image.asset(
+                    'assets/img/elearning.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Divider(
+                    color: Colors.black,
+                    thickness: 25,
+                  ),
+                ),
+                // Divider(
+                //   color: Colors.grey,
+                // ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 25,
+                  ),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => IntroPage()));
+                    },
+                    leading: Icon(
+                      Icons.home,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      'Home',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 25,
+                  ),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.star,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      'Rate Us',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 25,
+                  ),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      'About',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Divider(color: Colors.black,
-              thickness:25,
-              
-              ),
-            ),
-            // Divider(
-            //   color: Colors.grey,
-            // ),
-            Padding(
-              padding: const EdgeInsets.only(left:25,),
+              padding: const EdgeInsets.only(left: 25, bottom: 25),
               child: ListTile(
-                leading: Icon(Icons.home,color: Colors.white,),
-                title: Text('Home',
-                style: TextStyle(
+                leading: Icon(
+                  Icons.logout,
                   color: Colors.white,
                 ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left:25,),
-              child: ListTile(
-                leading: Icon(Icons.star,color: Colors.white,),
-                title: Text('Rate Us',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left:25,),
-              child: ListTile(
-                leading: Icon(Icons.info,color: Colors.white,),
-                title: Text('Help',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                title: Text(
+                  'Logout',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -316,58 +359,66 @@ class _home_pageState extends State<home_page> {
                           SizedBox(
                             width: 20,
                           ),
-                          Container(
-                            height: 160,
-                            width: 160,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20.0)),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Column(
-                                // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(10.0)),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => PhysicsPage()));
+                            },
+                            child: Container(
+                              height: 160,
+                              width: 160,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Column(
+                                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10.0)),
+                                      ),
+                                      child: Icon(
+                                        Icons.rocket,
+                                        color: Colors.white,
+                                        size: 40,
+                                      ),
                                     ),
-                                    child: Icon(
-                                      Icons.rocket,
-                                      color: Colors.white,
-                                      size: 40,
+                                    SizedBox(
+                                      height: 15,
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text(
-                                    'Physcis',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                      letterSpacing: 0.4,
+                                    Text(
+                                      'Physcis',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                        letterSpacing: 0.4,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    '"Physics is simple, but subtle.."',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 12,
-                                      fontStyle: FontStyle.italic,
+                                    SizedBox(
+                                      height: 5,
                                     ),
-                                  ),
-                                ],
+                                    Text(
+                                      '"Physics is simple, but subtle.."',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12,
+                                        fontStyle: FontStyle.italic,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

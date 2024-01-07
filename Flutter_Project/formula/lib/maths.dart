@@ -272,18 +272,18 @@ class _MathsPageState extends State<MathsPage> {
                   ),
                 )),
           ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              child: Center(
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 70,
-                  width: 330,
-                ),
-              ),
-            ),
-          ),
+          // Expanded(
+          //   flex: 2,
+          //   child: Container(
+          //     child: Center(
+          //       child: Container(
+          //         alignment: Alignment.center,
+          //         height: 70,
+          //         width: 330,
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

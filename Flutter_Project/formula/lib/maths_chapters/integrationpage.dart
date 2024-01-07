@@ -110,7 +110,7 @@ class _IntegrationPageState extends State<IntegrationPage> with TickerProviderSt
                       selectedColor: Colors.grey,
                     ),
                     SizedBox(
-                      height:160,
+                      height:120,
                       
                     ),
                     Row(
