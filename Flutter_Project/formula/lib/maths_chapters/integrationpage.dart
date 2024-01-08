@@ -8,7 +8,8 @@ class IntegrationPage extends StatefulWidget {
   _IntegrationPageState createState() => _IntegrationPageState();
 }
 
-class _IntegrationPageState extends State<IntegrationPage> with TickerProviderStateMixin{
+class _IntegrationPageState extends State<IntegrationPage>
+    with TickerProviderStateMixin {
   List<String> asset = [
     'assets/img/1.png',
     'assets/img/2.png',
@@ -45,10 +46,8 @@ class _IntegrationPageState extends State<IntegrationPage> with TickerProviderSt
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
-            
             Padding(
               padding: EdgeInsets.all(40.0),
-            
               child: Center(
                 child: Text(
                   "Formula Cards",
@@ -84,9 +83,7 @@ class _IntegrationPageState extends State<IntegrationPage> with TickerProviderSt
                         physics: BouncingScrollPhysics(),
                         onPageChanged: (value) {
                           currentindex = value;
-                          setState(() {
-                            
-                          });
+                          setState(() {});
                         },
                         itemBuilder: (context, index) {
                           return Container(
@@ -104,30 +101,28 @@ class _IntegrationPageState extends State<IntegrationPage> with TickerProviderSt
                       height: 15,
                     ),
                     TabPageSelector(
-                      controller: TabController(length: asset.length,vsync: this,
-                      initialIndex: currentindex
-                      ),
+                      controller: TabController(
+                          length: asset.length,
+                          vsync: this,
+                          initialIndex: currentindex),
                       selectedColor: Colors.grey,
                     ),
                     SizedBox(
-                      height:120,
-                      
+                      height: 100,
                     ),
                     Row(
                       children: [
                         SizedBox(
-                          width: 320,
+                          width: 280,
                         ),
                         Container(
                           height: 60,
                           width: 60,
                           decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(15)
-                          ),
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(15)),
                           child: Icon(Icons.add),
                         ),
-                        
                       ],
                     ),
                   ],
