@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:formula/intro1.dart';
 
 class LoginPage extends StatelessWidget {
+
   const LoginPage({super.key});
 
   @override

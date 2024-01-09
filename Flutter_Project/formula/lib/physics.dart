@@ -2,11 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:formula/intro.dart';
-import 'package:formula/maths_chapters/differentiationpage.dart';
-import 'package:formula/maths_chapters/integrationpage.dart';
-import 'package:formula/maths_chapters/trigonometry.dart';
-import 'package:formula/maths_chapters/3d.dart';
-import 'package:formula/maths_chapters/vectors.dart';
+import 'package:formula/login.dart';
+import 'package:formula/physics_chapters/gravitation.dart';
+import 'package:formula/physics_chapters/laws_m.dart';
+import 'package:formula/physics_chapters/m_p.dart';
+import 'package:formula/physics_chapters/m_s.dart';
+import 'package:formula/physics_chapters/machanical_f.dart';
+import 'package:formula/physics_chapters/mechanical_s.dart';
+import 'package:formula/physics_chapters/rotation.dart';
+import 'package:formula/physics_chapters/work.dart';
 
 class PhysicsPage extends StatefulWidget {
   @override
@@ -126,6 +130,10 @@ class _PhysicsPageState extends State<PhysicsPage> {
             Padding(
               padding: const EdgeInsets.only(left: 25, bottom: 25),
               child: ListTile(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
                 leading: Icon(
                   Icons.logout,
                   color: Colors.white,
@@ -201,13 +209,13 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                   borderRadius: BorderRadius.circular(25),
                                 ),
                                 child: Icon(
-                                  Icons.calculate,
+                                  Icons.rocket,
                                   size: 70,
                                   color: Colors.white,
                                 ),
                               ),
                               SizedBox(
-                                width: 5,
+                                width: 15,
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(14.0),
@@ -215,9 +223,9 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Mathematics',
+                                      'Physics',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 25,
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         letterSpacing: 0.5,
@@ -239,7 +247,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                               width: 5,
                                             ),
                                             Text(
-                                              '7k+',
+                                              '9k+',
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold,
@@ -261,7 +269,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                               width: 5,
                                             ),
                                             Text(
-                                              '3.2',
+                                              '2.6',
                                               style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold,
@@ -277,16 +285,16 @@ class _PhysicsPageState extends State<PhysicsPage> {
                               SizedBox(
                                 width: 15,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(15.0),
-                                child: Text(
-                                  '\$10',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                              ),
+                              // Padding(
+                              //   padding: const EdgeInsets.all(15.0),
+                              //   child: Text(
+                              //     '\$15',
+                              //     style: TextStyle(
+                              //       fontWeight: FontWeight.bold,
+                              //       fontSize: 25,
+                              //     ),
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
@@ -318,130 +326,104 @@ class _PhysicsPageState extends State<PhysicsPage> {
                           children: [
                             chapters(
                               num: '01',
-                              title: 'Integration',
-                              cards: '5 cards available',
+                              title: 'Motion In a Straight Line',
+                              cards: '4 cards available',
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => IntegrationPage(),
+                                    builder: (context) => MotionSPage(),
                                   ),
                                 );
                               },
                             ),
                             chapters(
                               num: '02',
-                              title: 'Differentiation',
+                              title: 'Motion In a Plane',
                               cards: '4 cards available',
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DifferentiationPage(),
+                                    builder: (context) => MotionDPage(),
                                   ),
                                 );
                               },
                             ),
                             chapters(
                               num: '03',
-                              title: 'Trigonometry',
+                              title: 'Laws of Motion',
                               cards: '7 cards available',
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => TrigonometryPage(),
+                                    builder: (context) => LawsMPage(),
                                   ),
                                 );
                               },
                             ),
                             chapters(
                               num: '04',
-                              title: '3D',
+                              title: 'Work Energy and Power',
                               cards: '4 cards available',
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => ThreeDPage(),
+                                    builder: (context) => WorkEPage(),
                                   ),
                                 );
                               },
                             ),
                             chapters(
                               num: '05',
-                              title: 'Vectors',
-                              cards: '7 cards available',
+                              title: 'Rotational Motion',
+                              cards: '6 cards available',
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => VectorsPage(),
+                                    builder: (context) => RotationalMPage(),
                                   ),
                                 );
                               },
                             ),
                             chapters(
-                              num: '05',
-                              title: 'Vectors',
-                              cards: '7 cards available',
+                              num: '06',
+                              title: 'Gravitation',
+                              cards: '5 cards available',
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => VectorsPage(),
+                                    builder: (context) => GravitationPage(),
                                   ),
                                 );
                               },
                             ),
                             chapters(
-                              num: '05',
-                              title: 'Vectors',
+                              num: '07',
+                              title: 'Mechanical Properties of Solids',
                               cards: '7 cards available',
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => VectorsPage(),
+                                    builder: (context) => MechanicalSPage(),
                                   ),
                                 );
                               },
                             ),
                             chapters(
-                              num: '05',
-                              title: 'Vectors',
-                              cards: '7 cards available',
+                              num: '08',
+                              title: 'Mechanical Properties of Fluids',
+                              cards: '5 cards available',
                               onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => VectorsPage(),
-                                  ),
-                                );
-                              },
-                            ),
-                            chapters(
-                              num: '05',
-                              title: 'Vectors',
-                              cards: '7 cards available',
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => VectorsPage(),
-                                  ),
-                                );
-                              },
-                            ),
-                            chapters(
-                              num: '05',
-                              title: 'Vectors',
-                              cards: '7 cards available',
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => VectorsPage(),
+                                    builder: (context) => MechanicalFPage(),
                                   ),
                                 );
                               },

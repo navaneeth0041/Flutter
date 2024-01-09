@@ -24,57 +24,103 @@ class IntroPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 0.04 * MediaQuery.of(context).size.height,
+              height: 10,
             ),
             Text(
-              'FormulaHub',
+              'Welcome to FormulaHub!',
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'Nunito',
-                fontSize: 0.06 * MediaQuery.of(context).size.height,
-                letterSpacing: 0.9,
+                fontSize: 30,
+                letterSpacing: 0.4,
               ),
             ),
             SizedBox(
-              height: 0.01 * MediaQuery.of(context).size.height,
+              height: 50,
             ),
-            Text(
-              'Makes people easy to lead but, difficult to drive; easy to govern, but impossible to enslave',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 0.02 * MediaQuery.of(context).size.height,
-                letterSpacing: 0.1,
-                fontStyle: FontStyle.italic,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                      thickness: 2,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      'Select your class to continue...',
+                      style: TextStyle(color: Colors.grey[700]),
+                    ),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 2,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                ],
               ),
-              textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 0.05 * MediaQuery.of(context).size.height,
+              height: 20,
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => home_page()));
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.grey[900],
-                    borderRadius: BorderRadius.circular(12)),
-                padding:
-                    EdgeInsets.all(0.03 * MediaQuery.of(context).size.height),
-                child: Center(
-                  child: Text(
-                    'Start Learning',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 0.6,
-                      fontSize: 0.05 * MediaQuery.of(context).size.width,
+            Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => home_page()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey[900],
+                        borderRadius: BorderRadius.circular(12)),
+                    padding: EdgeInsets.all(
+                        0.03 * MediaQuery.of(context).size.height),
+                    child: Center(
+                      child: Text(
+                        'Plus One (+1)',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.6,
+                          fontSize: 0.05 * MediaQuery.of(context).size.width,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
+                SizedBox(
+                  height: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => home_page()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey[900],
+                        borderRadius: BorderRadius.circular(12)),
+                    padding: EdgeInsets.all(
+                        0.03 * MediaQuery.of(context).size.height),
+                    child: Center(
+                      child: Text(
+                        'Plus Two (+2)',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.6,
+                          fontSize: 0.05 * MediaQuery.of(context).size.width,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ]),
         ),

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:formula/chemistry.dart';
 import 'package:formula/intro.dart';
+import 'package:formula/login.dart';
 import 'package:formula/maths.dart';
 import 'package:formula/physics.dart';
 
@@ -16,15 +17,34 @@ class _home_pageState extends State<home_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/img/light-bulb.png',
+              height: 23,
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              'FormulaHub',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 37,
+              ),
+            ),
+          ],
+        ),
         backgroundColor: Colors.white,
         elevation: 0,
         leading: Builder(builder: (context) {
           return IconButton(
             icon: Icon(
               Icons.menu,
-              size: 30,
+              size: 25,
             ),
-            color: Colors.black,
+            color: Colors.grey[700],
             onPressed: () {
               Scaffold.of(context).openDrawer();
             },
@@ -35,8 +55,8 @@ class _home_pageState extends State<home_page> {
             padding: const EdgeInsets.all(8.0),
             child: Icon(
               Icons.search,
-              color: Colors.black,
-              size: 30,
+              color: Colors.grey[700],
+              size: 25,
             ),
           ),
         ],
@@ -124,6 +144,10 @@ class _home_pageState extends State<home_page> {
             Padding(
               padding: const EdgeInsets.only(left: 25, bottom: 25),
               child: ListTile(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
+                    },
                 leading: Icon(
                   Icons.logout,
                   color: Colors.white,
@@ -146,31 +170,25 @@ class _home_pageState extends State<home_page> {
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'The only step you need,',
-                      style: TextStyle(
-                        fontSize: 27,
-                        letterSpacing: 0.5,
-                      ),
-                    ),
-                    Text(
-                      'towards your dream...',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 27,
-                        letterSpacing: 0.5,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 1,
-                    ),
+                    // Center(
+                    //   child: Text(
+                    //     'FormulaHub',
+                    //     style: TextStyle(
+                    //       fontSize: 35,
+                    //       letterSpacing: 0.5,
+                    //     ),
+                    //   ),
+                    // ),
                     Image.asset(
-                      'assets/img/360_F_466738163_nEW7NHxpC5V8HrUIxbCcQMtelDi74A0X.jpg',
-                      height: 325,
-                      width: 300,
+                      'assets/img/—Pngtree—students who are studying for_4496533.png',
+                      height: 388,
+                      width: 388,
                     ),
                   ],
                 ),
@@ -182,7 +200,7 @@ class _home_pageState extends State<home_page> {
             child: Container(
               height: 20,
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: Color.fromARGB(255, 51, 36, 32),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
@@ -237,7 +255,7 @@ class _home_pageState extends State<home_page> {
                               height: 160,
                               width: 160,
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Colors.grey[300],
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20.0)),
                               ),
@@ -304,7 +322,7 @@ class _home_pageState extends State<home_page> {
                               height: 160,
                               width: 160,
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Colors.grey[300],
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20.0)),
                               ),
@@ -370,7 +388,7 @@ class _home_pageState extends State<home_page> {
                               height: 160,
                               width: 160,
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Colors.grey[300],
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20.0)),
                               ),
@@ -429,7 +447,7 @@ class _home_pageState extends State<home_page> {
                             height: 160,
                             width: 160,
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Colors.grey[300],
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20.0)),
                             ),

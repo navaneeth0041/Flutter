@@ -2,28 +2,22 @@
 
 import 'package:flutter/material.dart';
 
-class IntegrationPage extends StatefulWidget {
+class MechanicalSPage extends StatefulWidget {
   @override
   // ignore: library_private_types_in_public_api
-  _IntegrationPageState createState() => _IntegrationPageState();
+  _MechanicalSPageState createState() => _MechanicalSPageState();
 }
 
-class _IntegrationPageState extends State<IntegrationPage>
-    with TickerProviderStateMixin {
+class _MechanicalSPageState extends State<MechanicalSPage> with TickerProviderStateMixin {
   List<String> asset = [
-    'assets/img/1.png',
-    'assets/img/2.png',
-    'assets/img/3.png',
-    'assets/img/4.png',
-    'assets/img/5.png',
+    'assets/img/mps1.png',
+    'assets/img/mps2.png',
+    'assets/img/mps3.png',
+    'assets/img/mps4.png',
+    'assets/img/mps5.png',
+    'assets/img/mps6.png',
+    'assets/img/mps7.png',
   ];
-  // final color = [
-  //   Colors.red,
-  //   Colors.amber,
-  //   Colors.orange,
-  //   Colors.green,
-  //   Colors.blue,
-  // ];
   int currentindex = 0;
   @override
   Widget build(BuildContext context) {
@@ -71,7 +65,7 @@ class _IntegrationPageState extends State<IntegrationPage>
                       height: 30,
                     ),
                     SizedBox(
-                      height: 360,
+                      height: 375,
                       width: MediaQuery.of(context).size.width,
                       child: PageView.builder(
                         controller: PageController(
