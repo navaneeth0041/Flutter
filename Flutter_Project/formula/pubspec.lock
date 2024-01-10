@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  carousel_slider:
+    dependency: "direct dev"
+    description:
+      name: carousel_slider
+      sha256: "9c695cc963bf1d04a47bd6021f68befce8970bcd61d24938e1fb0918cf5d9c42"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.1"
   characters:
     dependency: transitive
     description:
@@ -75,6 +83,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  hidden_drawer_menu:
+    dependency: "direct dev"
+    description:
+      name: hidden_drawer_menu
+      sha256: "74ca9c4ffc45c05dec3fd4e12cd6bd0851029d909ee5531bf31244b7160f96b9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   lints:
     dependency: transitive
     description:

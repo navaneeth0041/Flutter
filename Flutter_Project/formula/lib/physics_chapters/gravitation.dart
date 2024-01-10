@@ -8,7 +8,8 @@ class GravitationPage extends StatefulWidget {
   _GravitationPageState createState() => _GravitationPageState();
 }
 
-class _GravitationPageState extends State<GravitationPage> with TickerProviderStateMixin {
+class _GravitationPageState extends State<GravitationPage>
+    with TickerProviderStateMixin {
   List<String> asset = [
     'assets/img/gp1.png',
     'assets/img/gp2.png',
@@ -20,38 +21,25 @@ class _GravitationPageState extends State<GravitationPage> with TickerProviderSt
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      // appBar: AppBar(
-      //   leading: Icon(Icons.menu,color:Colors.white),
-      //     backgroundColor: Colors.black,
-      //     title:Text(
-      //       'Integration',
-      //       style: TextStyle(
-      //         color: Colors.white,
-      //         letterSpacing: 0.7,
-
-      //       ),
-      //     ) ,
-      //     centerTitle: true,
-      // ),
+      backgroundColor: Colors.grey[900],
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(30.0),
-              child: Center(
-                child: Text(
-                  "Formula Cards",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 30,
-                    letterSpacing: 0.7,
-                  ),
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.all(30.0),
+            //   child: Center(
+            //     child: Text(
+            //       "Formula Cards",
+            //       style: TextStyle(
+            //         fontWeight: FontWeight.bold,
+            //         color: Colors.white,
+            //         fontSize: 30,
+            //         letterSpacing: 0.7,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               height: 40,
             ),
@@ -97,7 +85,7 @@ class _GravitationPageState extends State<GravitationPage> with TickerProviderSt
                           length: asset.length,
                           vsync: this,
                           initialIndex: currentindex),
-                      selectedColor: Colors.grey,
+                      selectedColor: Colors.grey[400],
                     ),
                     SizedBox(
                       height: 70,
@@ -106,14 +94,6 @@ class _GravitationPageState extends State<GravitationPage> with TickerProviderSt
                       children: [
                         SizedBox(
                           width: 280,
-                        ),
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Icon(Icons.add),
                         ),
                       ],
                     ),

@@ -1,16 +1,16 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:formula/physics_drawers/drawer_gravity.dart';
+import 'package:formula/physics_drawers/drawer_lm.dart';
+import 'package:formula/physics_drawers/drawer_mp.dart';
+import 'package:formula/physics_drawers/drawer_mpf.dart';
+import 'package:formula/physics_drawers/drawer_mps.dart';
 import 'package:formula/intro.dart';
 import 'package:formula/login.dart';
-import 'package:formula/physics_chapters/gravitation.dart';
-import 'package:formula/physics_chapters/laws_m.dart';
-import 'package:formula/physics_chapters/m_p.dart';
-import 'package:formula/physics_chapters/m_s.dart';
-import 'package:formula/physics_chapters/machanical_f.dart';
-import 'package:formula/physics_chapters/mechanical_s.dart';
-import 'package:formula/physics_chapters/rotation.dart';
-import 'package:formula/physics_chapters/work.dart';
+import 'package:formula/physics_drawers/drawer_ms.dart';
+import 'package:formula/physics_drawers/drawer_rm.dart';
+import 'package:formula/physics_drawers/drawer_we.dart';
 
 class PhysicsPage extends StatefulWidget {
   @override
@@ -332,7 +332,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => MotionSPage(),
+                                    builder: (context) => HiddenDrawerMS(),
                                   ),
                                 );
                               },
@@ -345,7 +345,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => MotionDPage(),
+                                    builder: (context) => HiddenDrawerMP(),
                                   ),
                                 );
                               },
@@ -358,7 +358,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => LawsMPage(),
+                                    builder: (context) => HiddenDrawerLM(),
                                   ),
                                 );
                               },
@@ -371,7 +371,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => WorkEPage(),
+                                    builder: (context) => HiddenDrawerWE(),
                                   ),
                                 );
                               },
@@ -384,7 +384,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => RotationalMPage(),
+                                    builder: (context) => HiddenDrawerRM(),
                                   ),
                                 );
                               },
@@ -397,7 +397,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => GravitationPage(),
+                                    builder: (context) => HiddenDrawerGR(),
                                   ),
                                 );
                               },
@@ -410,7 +410,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => MechanicalSPage(),
+                                    builder: (context) => HiddenDrawerMPS(),
                                   ),
                                 );
                               },
@@ -423,7 +423,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => MechanicalFPage(),
+                                    builder: (context) => HiddenDrawerMPF(),
                                   ),
                                 );
                               },
