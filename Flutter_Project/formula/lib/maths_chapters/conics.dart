@@ -8,7 +8,8 @@ class ConicsPage extends StatefulWidget {
   _ConicsPageState createState() => _ConicsPageState();
 }
 
-class _ConicsPageState extends State<ConicsPage> with TickerProviderStateMixin {
+class _ConicsPageState extends State<ConicsPage>
+    with TickerProviderStateMixin {
   List<String> asset = [
     'assets/img/c1.png',
     'assets/img/c2.png',
@@ -18,43 +19,31 @@ class _ConicsPageState extends State<ConicsPage> with TickerProviderStateMixin {
     'assets/img/c6.png',
     'assets/img/c7.png',
     'assets/img/c8.png',
+
   ];
   int currentindex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      // appBar: AppBar(
-      //   leading: Icon(Icons.menu,color:Colors.white),
-      //     backgroundColor: Colors.black,
-      //     title:Text(
-      //       'Integration',
-      //       style: TextStyle(
-      //         color: Colors.white,
-      //         letterSpacing: 0.7,
-
-      //       ),
-      //     ) ,
-      //     centerTitle: true,
-      // ),
+      backgroundColor: Colors.grey[900],
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(30.0),
-              child: Center(
-                child: Text(
-                  "Formula Cards",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 30,
-                    letterSpacing: 0.7,
-                  ),
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.all(30.0),
+            //   child: Center(
+            //     child: Text(
+            //       "Formula Cards",
+            //       style: TextStyle(
+            //         fontWeight: FontWeight.bold,
+            //         color: Colors.white,
+            //         fontSize: 30,
+            //         letterSpacing: 0.7,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               height: 40,
             ),
@@ -66,7 +55,7 @@ class _ConicsPageState extends State<ConicsPage> with TickerProviderStateMixin {
                       height: 30,
                     ),
                     SizedBox(
-                      height: 350,
+                      height: 375,
                       width: MediaQuery.of(context).size.width,
                       child: PageView.builder(
                         controller: PageController(
@@ -100,7 +89,7 @@ class _ConicsPageState extends State<ConicsPage> with TickerProviderStateMixin {
                           length: asset.length,
                           vsync: this,
                           initialIndex: currentindex),
-                      selectedColor: Colors.grey,
+                      selectedColor: Colors.grey[400],
                     ),
                     SizedBox(
                       height: 70,
@@ -109,14 +98,6 @@ class _ConicsPageState extends State<ConicsPage> with TickerProviderStateMixin {
                       children: [
                         SizedBox(
                           width: 280,
-                        ),
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Icon(Icons.add),
                         ),
                       ],
                     ),

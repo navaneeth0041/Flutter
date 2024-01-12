@@ -1,14 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_string_interpolations, camel_case_types, use_key_in_widget_constructors, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:formula/chemistry_chapters/basicconcepts.dart';
-import 'package:formula/chemistry_chapters/bonding.dart';
-import 'package:formula/chemistry_chapters/eqm.dart';
-import 'package:formula/chemistry_chapters/states.dart';
-import 'package:formula/chemistry_chapters/structure.dart';
-import 'package:formula/chemistry_chapters/thermo.dart';
+import 'package:formula/chemistry_drawers/drawer_basic.dart';
+import 'package:formula/chemistry_drawers/drawer_bonding.dart';
+import 'package:formula/chemistry_drawers/drawer_eqm.dart';
+import 'package:formula/chemistry_drawers/drawer_states.dart';
+import 'package:formula/chemistry_drawers/drawer_structure.dart';
+import 'package:formula/chemistry_drawers/drawer_thermo.dart';
 import 'package:formula/intro.dart';
 import 'package:formula/login.dart';
+
 class ChemistryPage extends StatefulWidget {
   @override
   _ChemistryPageState createState() => _ChemistryPageState();
@@ -127,10 +128,10 @@ class _ChemistryPageState extends State<ChemistryPage> {
             Padding(
               padding: const EdgeInsets.only(left: 25, bottom: 25),
               child: ListTile(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LoginPage()));
-                    },
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
                 leading: Icon(
                   Icons.logout,
                   color: Colors.white,
@@ -199,20 +200,20 @@ class _ChemistryPageState extends State<ChemistryPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 85,
-                                width: 85,
+                                height: 80,
+                                width: 80,
                                 decoration: BoxDecoration(
                                   color: Colors.black,
                                   borderRadius: BorderRadius.circular(25),
                                 ),
                                 child: Icon(
                                   Icons.science,
-                                  size: 70,
+                                  size: 65,
                                   color: Colors.white,
                                 ),
                               ),
                               SizedBox(
-                                width: 5,
+                                width: 25,
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(14.0),
@@ -222,7 +223,7 @@ class _ChemistryPageState extends State<ChemistryPage> {
                                     Text(
                                       'Chemistry',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 25,
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         letterSpacing: 0.5,
@@ -279,19 +280,6 @@ class _ChemistryPageState extends State<ChemistryPage> {
                                   ],
                                 ),
                               ),
-                              SizedBox(
-                                width: 14,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(15.0),
-                                child: Text(
-                                  '\$10',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
                         ),
@@ -329,7 +317,7 @@ class _ChemistryPageState extends State<ChemistryPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => BasicCPage(),
+                                    builder: (context) => HiddenDrawerBasicC(),
                                   ),
                                 );
                               },
@@ -342,7 +330,7 @@ class _ChemistryPageState extends State<ChemistryPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => StructureAPage(),
+                                    builder: (context) => HiddenDrawerStructure(),
                                   ),
                                 );
                               },
@@ -355,7 +343,7 @@ class _ChemistryPageState extends State<ChemistryPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => ChemicalBPage(),
+                                    builder: (context) => HiddenDrawerBonding(),
                                   ),
                                 );
                               },
@@ -368,7 +356,7 @@ class _ChemistryPageState extends State<ChemistryPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => StatesPage(),
+                                    builder: (context) => HiddenDrawerStates(),
                                   ),
                                 );
                               },
@@ -381,7 +369,7 @@ class _ChemistryPageState extends State<ChemistryPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => ThermoDPage(),
+                                    builder: (context) => HiddenDrawerThermo(),
                                   ),
                                 );
                               },
@@ -394,7 +382,7 @@ class _ChemistryPageState extends State<ChemistryPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => EqmPage(),
+                                    builder: (context) => HiddenDrawerEQM(),
                                   ),
                                 );
                               },

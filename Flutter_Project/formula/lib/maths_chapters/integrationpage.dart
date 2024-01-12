@@ -16,50 +16,33 @@ class _IntegrationPageState extends State<IntegrationPage>
     'assets/img/3.png',
     'assets/img/4.png',
     'assets/img/5.png',
+
+
+
   ];
-  // final color = [
-  //   Colors.red,
-  //   Colors.amber,
-  //   Colors.orange,
-  //   Colors.green,
-  //   Colors.blue,
-  // ];
   int currentindex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      // appBar: AppBar(
-      //   leading: Icon(Icons.menu,color:Colors.white),
-      //     backgroundColor: Colors.black,
-      //     title:Text(
-      //       'Integration',
-      //       style: TextStyle(
-      //         color: Colors.white,
-      //         letterSpacing: 0.7,
-
-      //       ),
-      //     ) ,
-      //     centerTitle: true,
-      // ),
+      backgroundColor: Colors.grey[900],
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(30.0),
-              child: Center(
-                child: Text(
-                  "Formula Cards",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 30,
-                    letterSpacing: 0.7,
-                  ),
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.all(30.0),
+            //   child: Center(
+            //     child: Text(
+            //       "Formula Cards",
+            //       style: TextStyle(
+            //         fontWeight: FontWeight.bold,
+            //         color: Colors.white,
+            //         fontSize: 30,
+            //         letterSpacing: 0.7,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               height: 40,
             ),
@@ -71,7 +54,7 @@ class _IntegrationPageState extends State<IntegrationPage>
                       height: 30,
                     ),
                     SizedBox(
-                      height: 360,
+                      height: 375,
                       width: MediaQuery.of(context).size.width,
                       child: PageView.builder(
                         controller: PageController(
@@ -105,7 +88,7 @@ class _IntegrationPageState extends State<IntegrationPage>
                           length: asset.length,
                           vsync: this,
                           initialIndex: currentindex),
-                      selectedColor: Colors.grey,
+                      selectedColor: Colors.grey[400],
                     ),
                     SizedBox(
                       height: 70,
@@ -114,14 +97,6 @@ class _IntegrationPageState extends State<IntegrationPage>
                       children: [
                         SizedBox(
                           width: 280,
-                        ),
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Icon(Icons.add),
                         ),
                       ],
                     ),

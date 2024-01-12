@@ -48,7 +48,8 @@ dev_dependencies:
   hidden_drawer_menu: ^3.0.1
   flutter_lints: ^2.0.0
   carousel_slider: ^4.0.0
-  
+  flutter_tex: ^4.0.6
+  flutter_math_fork: ^0.7.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

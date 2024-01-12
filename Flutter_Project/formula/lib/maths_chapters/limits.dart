@@ -8,7 +8,8 @@ class LimitsPage extends StatefulWidget {
   _LimitsPageState createState() => _LimitsPageState();
 }
 
-class _LimitsPageState extends State<LimitsPage> with TickerProviderStateMixin {
+class _LimitsPageState extends State<LimitsPage>
+    with TickerProviderStateMixin {
   List<String> asset = [
     'assets/img/l1.png',
     'assets/img/l2.png',
@@ -16,43 +17,31 @@ class _LimitsPageState extends State<LimitsPage> with TickerProviderStateMixin {
     'assets/img/l4.png',
     'assets/img/l5.png',
     'assets/img/l6.png',
+
   ];
   int currentindex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      // appBar: AppBar(
-      //   leading: Icon(Icons.menu,color:Colors.white),
-      //     backgroundColor: Colors.black,
-      //     title:Text(
-      //       'Integration',
-      //       style: TextStyle(
-      //         color: Colors.white,
-      //         letterSpacing: 0.7,
-
-      //       ),
-      //     ) ,
-      //     centerTitle: true,
-      // ),
+      backgroundColor: Colors.grey[900],
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(30.0),
-              child: Center(
-                child: Text(
-                  "Formula Cards",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 30,
-                    letterSpacing: 0.7,
-                  ),
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.all(30.0),
+            //   child: Center(
+            //     child: Text(
+            //       "Formula Cards",
+            //       style: TextStyle(
+            //         fontWeight: FontWeight.bold,
+            //         color: Colors.white,
+            //         fontSize: 30,
+            //         letterSpacing: 0.7,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               height: 40,
             ),
@@ -64,7 +53,7 @@ class _LimitsPageState extends State<LimitsPage> with TickerProviderStateMixin {
                       height: 30,
                     ),
                     SizedBox(
-                      height: 350,
+                      height: 375,
                       width: MediaQuery.of(context).size.width,
                       child: PageView.builder(
                         controller: PageController(
@@ -98,7 +87,7 @@ class _LimitsPageState extends State<LimitsPage> with TickerProviderStateMixin {
                           length: asset.length,
                           vsync: this,
                           initialIndex: currentindex),
-                      selectedColor: Colors.grey,
+                      selectedColor: Colors.grey[400],
                     ),
                     SizedBox(
                       height: 70,
@@ -107,14 +96,6 @@ class _LimitsPageState extends State<LimitsPage> with TickerProviderStateMixin {
                       children: [
                         SizedBox(
                           width: 280,
-                        ),
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Icon(Icons.add),
                         ),
                       ],
                     ),

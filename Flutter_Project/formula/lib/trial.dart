@@ -38,7 +38,7 @@ class _FormulaPageState extends State<FormulaPage> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        color: Colors.white, // White background
+                        color: Colors.white, 
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Center(
@@ -89,7 +89,7 @@ class _FormulaPageState extends State<FormulaPage> {
           ),
         ],
       ),
-      backgroundColor: Colors.grey[900], // Black background
+      backgroundColor: Colors.grey[900], 
     );
   }
 

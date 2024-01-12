@@ -215,7 +215,7 @@ class _PhysicsPageState extends State<PhysicsPage> {
                                 ),
                               ),
                               SizedBox(
-                                width: 15,
+                                width: 25,
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(14.0),

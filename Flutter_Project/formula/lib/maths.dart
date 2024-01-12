@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:formula/intro.dart';
 import 'package:formula/login.dart';
-import 'package:formula/maths_chapters/conics.dart';
-import 'package:formula/maths_chapters/differentiationpage.dart';
-import 'package:formula/maths_chapters/integrationpage.dart';
-import 'package:formula/maths_chapters/limits.dart';
-import 'package:formula/maths_chapters/staright.dart';
-import 'package:formula/maths_chapters/trigonometry.dart';
-import 'package:formula/maths_chapters/3d.dart';
-import 'package:formula/maths_chapters/vectors.dart';
+import 'package:formula/maths_drawers/drawer_3d.dart';
+import 'package:formula/maths_drawers/drawer_conic.dart';
+import 'package:formula/maths_drawers/drawer_differ.dart';
+import 'package:formula/maths_drawers/drawer_integral.dart';
+import 'package:formula/maths_drawers/drawer_limits.dart';
+import 'package:formula/maths_drawers/drawer_straight.dart';
+import 'package:formula/maths_drawers/drawer_trigno.dart';
+import 'package:formula/maths_drawers/drawer_vector.dart';
 
 class MathsPage extends StatefulWidget {
   @override
@@ -202,20 +202,20 @@ class _MathsPageState extends State<MathsPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 85,
-                                width: 85,
+                                height: 80,
+                                width: 80,
                                 decoration: BoxDecoration(
                                   color: Colors.black,
                                   borderRadius: BorderRadius.circular(25),
                                 ),
                                 child: Icon(
                                   Icons.calculate,
-                                  size: 70,
+                                  size: 60,
                                   color: Colors.white,
                                 ),
                               ),
                               SizedBox(
-                                width: 5,
+                                width: 25,
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(14.0),
@@ -225,7 +225,7 @@ class _MathsPageState extends State<MathsPage> {
                                     Text(
                                       'Mathematics',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 25,
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         letterSpacing: 0.5,
@@ -282,19 +282,6 @@ class _MathsPageState extends State<MathsPage> {
                                   ],
                                 ),
                               ),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(15.0),
-                                child: Text(
-                                  '\$10',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
                         ),
@@ -332,7 +319,7 @@ class _MathsPageState extends State<MathsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => IntegrationPage(),
+                                    builder: (context) => HiddenDrawerIntegral(),
                                   ),
                                 );
                               },
@@ -345,7 +332,7 @@ class _MathsPageState extends State<MathsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DifferentiationPage(),
+                                    builder: (context) => HiddenDrawerDiffer(),
                                   ),
                                 );
                               },
@@ -358,7 +345,7 @@ class _MathsPageState extends State<MathsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => TrigonometryPage(),
+                                    builder: (context) => HiddenDrawerTrigno(),
                                   ),
                                 );
                               },
@@ -371,7 +358,7 @@ class _MathsPageState extends State<MathsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => ThreeDPage(),
+                                    builder: (context) => HiddenDrawerThreeD(),
                                   ),
                                 );
                               },
@@ -384,7 +371,7 @@ class _MathsPageState extends State<MathsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => VectorsPage(),
+                                    builder: (context) => HiddenDrawerVectors(),
                                   ),
                                 );
                               },
@@ -397,7 +384,7 @@ class _MathsPageState extends State<MathsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => LimitsPage(),
+                                    builder: (context) => HiddenDrawerLimits(),
                                   ),
                                 );
                               },
@@ -410,7 +397,7 @@ class _MathsPageState extends State<MathsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => ConicsPage(),
+                                    builder: (context) => HiddenDrawerConicS(),
                                   ),
                                 );
                               },
@@ -423,7 +410,7 @@ class _MathsPageState extends State<MathsPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => StraightPage(),
+                                    builder: (context) => HiddenDrawerStraight(),
                                   ),
                                 );
                               },
