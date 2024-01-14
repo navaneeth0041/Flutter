@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:formula/chemistry_chapters/bonding.dart';
-import 'package:formula/trial.dart';
+import 'package:formula/add_cards.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 
 class HiddenDrawerBonding extends StatefulWidget {

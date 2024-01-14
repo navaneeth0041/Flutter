@@ -1,12 +1,14 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, depend_on_referenced_packages, library_private_types_in_public_api, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_math_fork/flutter_math.dart';
 
 class Formula {
   String content;
+  String latexContent;
 
-  Formula(this.content);
+  Formula(this.content, this.latexContent);
 }
 
 class FormulaPage extends StatefulWidget {
@@ -16,14 +18,10 @@ class FormulaPage extends StatefulWidget {
 
 class _FormulaPageState extends State<FormulaPage> {
   List<Formula> formulas = [];
-  TextEditingController formulaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Formula App'),
-      // ),
       body: Column(
         children: [
           Expanded(
@@ -32,19 +30,20 @@ class _FormulaPageState extends State<FormulaPage> {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
+                      width: 300,
                       margin: EdgeInsets.symmetric(horizontal: 8),
                       child: Card(
-                        elevation: 5, // Add shadow
+                        elevation: 5,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        color: Colors.white, 
+                        color: Colors.white,
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Center(
-                            child: Text(
-                              formula.content,
-                              style: TextStyle(fontSize: 18),
+                            child: Math.tex(
+                              formula.latexContent,
+                              textStyle: TextStyle(fontSize: 18),
                             ),
                           ),
                         ),
@@ -54,7 +53,7 @@ class _FormulaPageState extends State<FormulaPage> {
                 );
               }).toList(),
               options: CarouselOptions(
-                height: 200,
+                height: 300,
                 enlargeCenterPage: true,
               ),
             ),
@@ -78,7 +77,7 @@ class _FormulaPageState extends State<FormulaPage> {
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    _showAddFormulaDialog(context);
+                    _showAddFormulaBottomSheet(context);
                   },
                 ),
               ),
@@ -89,40 +88,64 @@ class _FormulaPageState extends State<FormulaPage> {
           ),
         ],
       ),
-      backgroundColor: Colors.grey[900], 
+      backgroundColor: Colors.grey[900],
     );
   }
 
-  void _showAddFormulaDialog(BuildContext context) {
-    showDialog(
+  void _showAddFormulaBottomSheet(BuildContext context) {
+    TextEditingController formulaController = TextEditingController();
+
+    showModalBottomSheet(
+      useSafeArea: false,
+      showDragHandle: true,
+      isDismissible: false,
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Add Formula'),
-          content: TextField(
-            controller: formulaController,
-            decoration: InputDecoration(hintText: 'Enter formula content'),
+        return Container(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize:MainAxisSize.min,
+            children: [
+              TextField(
+                controller: formulaController,
+                decoration: InputDecoration(
+                  hintText: 'Enter formula ',
+                  border: OutlineInputBorder(),
+                ),
+                textInputAction: TextInputAction.done,
+                onSubmitted: (value) {
+                  _saveFormula(value);
+                  Navigator.pop(context);
+                },
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  _saveFormula(formulaController.text);
+                  Navigator.pop(context);
+                },
+                child: Text('Save',style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),),
+              ),
+            ],
           ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  formulas.add(Formula(formulaController.text));
-                  formulaController.clear();
-                });
-                Navigator.of(context).pop();
-              },
-              child: Text('Save'),
-            ),
-          ],
         );
       },
     );
+  }
+
+  void _saveFormula(String formulaContent) {
+    String latexContent = _convertToLatex(formulaContent);
+
+    setState(() {
+      formulas.add(Formula(formulaContent, latexContent));
+    });
+  }
+
+  String _convertToLatex(String content) {
+    return content;
   }
 }
